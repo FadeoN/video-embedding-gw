@@ -20,7 +20,6 @@ class KeypointDTO(BaseModel):
     y: float
 
 
-
 class FrameKeypointDTO(BaseModel):
     keypoints: List[KeypointDTO]
 

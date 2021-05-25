@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+ backend:
+  container_name: video-embedding-gw
+  build: .
+  command: python3 main.py
+  ports:
+    - "5005:5005"
+  expose:
+    - "5005"
