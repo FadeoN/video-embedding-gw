@@ -30,7 +30,7 @@ class AppOptions(object):
         if os.getenv("PROFILE") == "PROD":
             self.similarity_api_options = SimilarityApiOptions("http://165.22.67.71:5000")
             self.image_embedding_api_options = ImageEmbeddingApiOptions("http://165.22.67.71:5004")
-            self.image_embedding_api_options = ImageEmbeddingApiOptions("http://165.22.67.71:5004")
+            self.pose_estimation_api_options = PoseEstimationApiOptions("http://165.22.67.71:5001")
 
         else:
             self.similarity_api_options = SimilarityApiOptions("http://localhost:5000")

@@ -3,6 +3,8 @@ services:
  backend:
   container_name: video-embedding-gw
   build: .
+  environment:
+    PROFILE: PROD
   command: python3 main.py
   ports:
     - "5005:5005"
