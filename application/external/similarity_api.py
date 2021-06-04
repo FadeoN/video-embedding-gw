@@ -8,7 +8,7 @@ from application.external.model.similarity import SearchFrameVectorRequest, Fram
 from infrastructure.configuration import APP_OPTIONS
 
 
-async def index_video(exerciseId: int, exerciseName: str, url: str, tag: str, frameVectorPairs: List[FrameVectorPair], index: Optional[str] = None):
+async def index_video(exerciseId: str, exerciseName: str, url: str, tag: str, frameVectorPairs: List[FrameVectorPair], index: Optional[str] = None):
     async with httpx.AsyncClient() as client:
         endpoint = f"{APP_OPTIONS.similarity_api_options.url}/index/exercise"
         request = IndexExerciseVideoRequest(exerciseId=exerciseId,

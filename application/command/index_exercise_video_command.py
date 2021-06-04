@@ -3,7 +3,7 @@ from typing import Optional
 
 class IndexExerciseVideoCommand:
     def __init__(self,
-                 exerciseId: int,
+                 exerciseId: str,
                  exerciseName: str,
                  url: str,
                  tag: str,

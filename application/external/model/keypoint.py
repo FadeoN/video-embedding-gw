@@ -31,7 +31,7 @@ class VideoEmbeddingRequest(BaseModel):
 
 
 class IndexExerciseVideoRequest(BaseModel):
-    exerciseId: int
+    exerciseId: str
     exerciseName: str
     url: str
     tag: str

@@ -10,7 +10,7 @@ class ExerciseStage(Enum):
 class ExerciseCounter:
 
     def __init__(self,
-                 exerciseId: int):
+                 exerciseId: str):
         self.exerciseId = exerciseId
         self.count = 0
         self.current_stage = ExerciseStage.NONE

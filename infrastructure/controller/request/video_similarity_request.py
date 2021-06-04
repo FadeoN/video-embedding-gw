@@ -6,7 +6,7 @@ from application.external.model.keypoint import FrameKeypointDTO
 
 
 class VideoSimilarityRequest(BaseModel):
-    exerciseId: int
+    exerciseId: str
     width: int = Field(default=1, ge=1, description="Width must be more than zero")
     height: int = Field(default=1, ge=1, description="Height must be more than zero")
     frames: List[FrameKeypointDTO]

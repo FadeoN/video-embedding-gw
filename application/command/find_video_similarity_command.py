@@ -5,7 +5,7 @@ from application.external.model.keypoint import FrameKeypointDTO
 
 class FindVideoSimilarityCommand:
     def __init__(self,
-                 exerciseId: int,
+                 exerciseId: str,
                  width: int,
                  height: int,
                  frames: List[FrameKeypointDTO],

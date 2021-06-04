@@ -40,7 +40,7 @@ def find_window_tags(frameSimilarities: List[FrameSimilarityDTO], size: int = 5)
     return windowSimilarities
 
 
-def count_correct_exercises(exerciseId: int, windowSimilarities: List[FrameSimilarityDTO]) -> int:
+def count_correct_exercises(exerciseId: str, windowSimilarities: List[FrameSimilarityDTO]) -> int:
 
     exerciseCounter = ExerciseCounter(exerciseId)
 
