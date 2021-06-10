@@ -5,8 +5,8 @@ class ExerciseStage(Enum):
     BEGINNING = 1
     END = 2
 
-    def __init__(self):
-        self.count = 0
+    def __init__(self, count=0):
+        self.count = count
         self.limit = 2
 
     def isCompleted(self):
