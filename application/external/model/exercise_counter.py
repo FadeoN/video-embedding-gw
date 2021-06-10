@@ -2,10 +2,18 @@ from enum import Enum
 
 class ExerciseStage(Enum):
 
-    NONE = 0
     BEGINNING = 1
     END = 2
 
+    def __init__(self):
+        self.count = 0
+        self.limit = 2
+
+    def isCompleted(self):
+        return self.count >= self.limit
+
+    def increaseCount(self):
+        self.count += 1
 
 class ExerciseCounter:
 
@@ -13,12 +21,21 @@ class ExerciseCounter:
                  exerciseId: str):
         self.exerciseId = exerciseId
         self.count = 0
-        self.current_stage = ExerciseStage.NONE
+        self.current_stage = ExerciseStage.BEGINNING
+        self.isEndPartCompleted = False
 
     def __next__(self, stage: ExerciseStage):
+        if self.current_stage == stage:
+            self.current_stage.increaseCount()
+            return
 
-        if self.current_stage == ExerciseStage.BEGINNING and stage == ExerciseStage.END:
-            self.current_stage = stage
-        elif self.current_stage in [ExerciseStage.NONE, ExerciseStage.END] and stage == ExerciseStage.BEGINNING:
-            self.current_stage = stage
-            self.count += 1
+        self.nextStage()
+
+    def nextStage(self):
+        if self.current_stage.isCompleted():
+            if self.current_stage == ExerciseStage.BEGINNING:
+                self.current_stage = ExerciseStage.END
+                self.count += 1 if self.isEndPartCompleted else 0
+            elif self.current_stage == ExerciseStage.END:
+                self.current_stage = ExerciseStage.BEGINNING
+                self.isEndPartCompleted = True
